@@ -12,6 +12,7 @@ ember-cli-build.js
 *.tgz
 
 # deps & caches
+.log/
 node_modules/
 .eslintcache
 .prettiercache

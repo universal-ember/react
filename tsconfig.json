@@ -11,6 +11,7 @@
   "include": ["src/**/*", "tests/**/*", "unpublished-development-types/**/*"],
   "compilerOptions": {
     "rootDir": ".",
+    "jsx": true,
     "types": ["ember-source/types", "vite/client", "@embroider/core/virtual"]
   }
 }
