@@ -3,9 +3,11 @@ import { waitForPromise } from '@ember/test-waiters';
 import { setComponentTemplate } from '@ember/component';
 import Modifier from 'ember-modifier';
 import type { ComponentLike } from '@glint/template';
-import React from 'react';
+import React, { act } from 'react';
 import { createRoot } from 'react-dom/client';
 import Component from '@glimmer/component';
+import { macroCondition, isTesting } from '@embroider/macros';
+import { setOwner, getOwner } from '@ember/owner';
 
 interface Signature<Props> {
   Args: {
@@ -22,7 +24,14 @@ export function makeRenderable<
 >(ReactComponent: ReactComponentType): ComponentLike<Signature<Props>> {
   class ReactRoot extends Component<Signature<Props>> {
     get props() {
-      return this.args.props ? { ...this.args.props } : { ...this.args };
+      const owner = getOwner(this);
+      const props = this.args.props ? { ...this.args.props } : { ...this.args };
+
+      if (owner) {
+        setOwner(props, owner);
+      }
+
+      return props;
     }
   }
   return setComponentTemplate(
@@ -53,8 +62,27 @@ class mount extends Modifier<{
   ) {
     this.#root ||= createRoot(element);
 
-    this.#root.render(React.createElement(component as any, props));
+    const toRender = React.createElement(component as any, props);
+    /**
+     * Subsequent re-renders will diff and replace contents as needed.
+     */
+    if (macroCondition(isTesting())) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      (window as any).IS_REACT_ACT_ENVIRONMENT = true;
+      act(() => {
+        this.#root?.render(toRender);
+      });
+    } else {
+      this.#root.render(toRender);
+    }
 
+    /**
+     * For ember's test waiter system.
+     * We don't know how long a react component will take to render,
+     * but it often doesn't finish synchronously.
+     *
+     * Waiting until the next animation frame before test executions continues.
+     */
     waitForPromise(
       (async () => {
         await new Promise((resolve) => {
