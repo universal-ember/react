@@ -37,6 +37,9 @@ Note that react components should be defined using jsx or tsx. Using jsx/tsx syn
 
 [^and-incorrect]: and incorrect -- the impact of JSX and TSX being supported in JS and TS files without the `x` extension has wreaked tons of havoc on the broader JavaScript ecosystem.
 
+A [reactive demo](https://limber.glimdown.com/edit?c=JYWwDg9gTgLgBAYQuCA7Apq%2BAzKy4DkAAgOYA2oI6UA9AMbKQZYEDcAUKJLHAN5wwoAQzoBrdABM4AXzi58xcpWo1BI0cFQk2nFD350o6ITHQAlTBOpCARmXQy5eEISIBXVMABu1AM5CyAFp0EBsVIxEYHV1ueH4AFQghXxgkLCFNagAaASSUx3kXAgi6GECYPJhgbABPaIZUfNQIKtq4AF44AAoASg6APlzkmC6AIgB3CHGc3wg4Y18a0Z6OBvzE4d8ABWgYAI64ECFxC1QrYTt0Lo2UtL3MqBX2dhoaOAtI72AYGoBCdjW8BgAAsQg5OnR0GQyF0CBQSMCok92OgAB6xOBWbBCNxkeB0MjJXxwAASULIEAA6tAyFI0aYzsSkChmHF2HA4EQ1GJJHAGB54J0AAwcDlc4Q8qQgsEHOHABFRDjsuCaQxgrAHXoDATA4C%2BAB0-I1AGpOgBGUW5EjkdDxUFUTV9dqDEF6-XSh2dV0Gj3g9qdOUKghwAD8hAkQigomDAC5CPDEdEOQAeUzgQmmfrKjkINxQIxYBx2sFx3i8b3u%2B3oaTSbNwZM3GDbXb7Oscsu-QKBOB2vUq4kAKzc%2BWlcBseHGvmocAA8jYB%2BhSjlmq6tHIhKg6DU4F2a23OWA8GBfO0y3OF6UdWD2r7DXmCzAa3A6zQs3XkzY3DAKqg4GgCcAYinuWuo%2BhA1r2MWVA1v0FQQQ4vrJjQn7fmgWYcimKE-s%2BGEYT8YDoO0oxYWgow4bhf6bhQQFliu1Q1DB%2B6NnA4zfMCcAlGUFTDPR77IV%2BP7ofWqghGAGboFmtZAA&format=gjs&shadowdom=off) -- however this won't start working until react-dom publishes ESM (they publish as CJS right now).
+
+
 ### Accessing the owner
 
 ```jsx
