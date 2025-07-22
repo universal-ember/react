@@ -4,7 +4,7 @@ React integration for Ember with reactive updating.
 
 ## Compatibility
 
-- Ember.js v5.8 or above
+- Ember.js v6.3 or above, not that earlier won't work. But this repo isn't testing prior to 6.3
 
 ## Installation
 
