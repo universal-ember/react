@@ -1,15 +1,12 @@
-import { defineConfig } from 'vite';
-import { extensions, ember, classicEmberSupport } from '@embroider/vite';
+import { defineConfig, splitVendorChunkPlugin } from 'vite';
+import { extensions, ember } from '@embroider/vite';
 import { babel } from '@rollup/plugin-babel';
 
 import react from '@vitejs/plugin-react';
 
-// For scenario testing
-const isCompat = Boolean(process.env.ENABLE_COMPAT_BUILD);
-
 export default defineConfig({
   plugins: [
-    ...(isCompat ? [classicEmberSupport()] : []),
+    splitVendorChunkPlugin(),
     ember(),
     react(),
     babel({
@@ -18,6 +15,7 @@ export default defineConfig({
     }),
   ],
   build: {
+    minify: false,
     rollupOptions: {
       input: {
         tests: 'tests/index.html',
