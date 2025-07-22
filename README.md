@@ -2,9 +2,9 @@
 
 React integration for Ember with reactive updating.
 
-## Compatibility
-
-- Ember.js v6.3 or above, not that earlier won't work. But this repo isn't testing prior to 6.3
+✨ Easy to use
+🎉 Supports all props / arguments
+⌚ Fast (no effects!)
 
 ## Installation
 
@@ -50,7 +50,6 @@ function MyReactComponent(props) {
     ... do something with the store ...
   </>;
 }
-
 ```
 
 ## Testing
@@ -91,6 +90,10 @@ module('makeRenderable', function (hooks) {
   });
 });
 ```
+
+## Compatibility
+
+- Ember.js v6.3 or above, not that earlier won't work. But this repo isn't testing prior to 6.3
 
 
 ## Contributing
