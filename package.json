@@ -1,6 +1,6 @@
 {
   "name": "@universal-ember/react",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Flawless React integration with Ember",
   "keywords": [
     "ember-addon"
@@ -108,6 +108,7 @@
       ]
     }
   },
+  "packageManager": "pnpm@10.13.1",
   "peerDependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
