@@ -1,22 +1,8 @@
 {
   "solution": {
     "@universal-ember/react": {
-      "impact": "minor",
-      "oldVersion": "0.0.1",
-      "newVersion": "0.1.0",
-      "tagName": "latest",
-      "constraints": [
-        {
-          "impact": "minor",
-          "reason": "Appears in changelog section :rocket: Enhancement"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
-        }
-      ],
-      "pkgJSONPath": "./package.json"
+      "oldVersion": "0.1.0"
     }
   },
-  "description": "## Release (2025-07-22)\n\n* @universal-ember/react 0.1.0 (minor)\n\n#### :rocket: Enhancement\n* `@universal-ember/react`\n  * [#4](https://github.com/universal-ember/react/pull/4) Add more testing and usage information ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :house: Internal\n* `@universal-ember/react`\n  * [#2](https://github.com/universal-ember/react/pull/2) Release plan ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "\n\n\n\n"
 }
