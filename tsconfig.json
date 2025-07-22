@@ -9,9 +9,10 @@
     "environment": ["ember-loose", "ember-template-imports"]
   },
   "include": ["src/**/*", "tests/**/*", "unpublished-development-types/**/*"],
+  "exclude": ["tests/react/**/*", "node_modules/**/*"],
   "compilerOptions": {
     "rootDir": ".",
-    "jsx": true,
+    "jsx": "react",
     "types": ["ember-source/types", "vite/client", "@embroider/core/virtual"]
   }
 }
